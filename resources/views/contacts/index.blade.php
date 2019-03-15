@@ -10,8 +10,6 @@
     margin-right: auto;
   }
 
-
-
 </style>
 
 <script>
@@ -65,7 +63,7 @@
                       <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-outline-primary">Edit</a>                        
                     </td>
                     <td>
-                        <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-outline-info">View</a>
+                        <a href="{{ route('contacts.show',$contact->id)}}" class="btn btn-outline-info">View</a>
                     </td>
                     <td>
                         <form action="{{ route('contacts.destroy', $contact->id)}}" method="post">

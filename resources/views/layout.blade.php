@@ -12,7 +12,11 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 
-
+    <style>
+        .max-height {
+            height: 100%;
+        }
+    </style>
 
 </head>
 
@@ -37,7 +41,7 @@
     </nav>
 
 
-    <div class="w-screen mt-4">
+    <div class="w-screen mt-4 max-height">
         @yield('content')
     </div>
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
