@@ -54,7 +54,7 @@ class ContactController extends Controller
         ]);
         $contact = Contact::create($validatedData);
    
-        return redirect('/contacts')->with('success', 'Contact is successfully saved');
+        return redirect('/contacts')->with('success', 'Contact was saved!');
     }
 
     /**
@@ -106,7 +106,7 @@ class ContactController extends Controller
         ]);
         Contact::whereId($id)->update($validatedData);
    
-        return redirect('/contacts')->with('success', 'Contact is successfully updated');
+        return redirect('/contacts')->with('success', 'Contact was successfully updated!');
     }
 
     /**
@@ -120,7 +120,7 @@ class ContactController extends Controller
         $contact = Contact::findOrFail($id);
         $contact->delete();
 
-        return redirect('/contacts')->with('success', 'Contact is successfully deleted');
+        return redirect('/contacts')->with('success', 'Contact was successfully deleted!');
     }
 
 }

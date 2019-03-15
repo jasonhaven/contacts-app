@@ -7,6 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Application</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -25,15 +32,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/create">Create</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Map</a>
-                </li>
             </ul>
         </div>
     </nav>
 
 
-    <div class="container">
+    <div class="w-screen mt-4">
         @yield('content')
     </div>
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
