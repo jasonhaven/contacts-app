@@ -14,9 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
-
-        return view('contacts/index', compact('contacts'));   
+        // fetch contacts and sort by first name
+        $contacts = Contact::orderBy('first_name')->get();
+        return view('contacts/index', compact('contacts'));
     }
 
     /**
@@ -122,4 +122,5 @@ class ContactController extends Controller
 
         return redirect('/contacts')->with('success', 'Contact is successfully deleted');
     }
+
 }
