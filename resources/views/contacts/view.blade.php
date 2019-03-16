@@ -18,10 +18,15 @@
         width: 100%;
         margin: 0;
         max-width: 100%;
+        padding: 0px;
     }
 
     .hidden {
         display: none;
+    }
+
+    .map-header {
+        margin: 20px;
     }
 
 </style>
@@ -74,6 +79,8 @@
 <div id="map-error" class="alert alert-danger hidden" role="alert">
     Something went wrong when loading the map...
 </div>
+
+<h3 class="map-header">{{$contact->first_name}}'s Location</h3>
 
 <input id="address" class="hidden" value="{{$contact->address}} {{$contact->city}}, {{$contact->state}} {{$contact->zip}}">
 

@@ -47,7 +47,7 @@
                     <th>Address</td>
                     <th>Birthday</td>
                     <th class="no-sort">Edit</td>
-                    <th class="no-sort">View</td>
+                    <th class="no-sort">Map</td>
                     <th class="no-sort">Delete</td>
                 </tr>
             </thead>
@@ -63,7 +63,7 @@
                       <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-outline-primary">Edit</a>                        
                     </td>
                     <td>
-                        <a href="{{ route('contacts.show',$contact->id)}}" class="btn btn-outline-info">View</a>
+                        <a href="{{ route('contacts.show',$contact->id)}}" class="btn btn-outline-info">Map</a>
                     </td>
                     <td>
                         <form action="{{ route('contacts.destroy', $contact->id)}}" method="post">

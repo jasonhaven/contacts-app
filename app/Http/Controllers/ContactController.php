@@ -41,10 +41,13 @@ class ContactController extends Controller
         $new_date = date_create($request['birthday']);
         $request['birthday'] = $new_date;
 
+        $new_phone = formatPhone($request['phone']);
+        $request['phone'] = $new_phone;
+
         $validatedData = $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'phone' => 'numeric',
+            'phone' => 'max:255',
             'address' => 'max:255',
             'city' => 'max:255',
             'state' => 'max:255',
@@ -95,10 +98,13 @@ class ContactController extends Controller
         $new_date = date_create($request['birthday']);
         $request['birthday'] = $new_date;
 
+        $new_phone = formatPhone($request['phone']);
+        $request['phone'] = $new_phone;
+
         $validatedData = $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'phone' => 'numeric',
+            'phone' => 'max:255',
             'address' => 'max:255',
             'city' => 'max:255',
             'state' => 'max:255',
@@ -123,6 +129,15 @@ class ContactController extends Controller
         $contact->delete();
 
         return redirect('/contacts')->with('success', 'Contact was successfully deleted!');
-    }
+    }    
 
+}
+
+function formatPhone($phoneNumber) 
+{
+    $phoneNumber = preg_replace("/[^\d]/","",$phoneNumber);
+    if(strlen($phoneNumber) == 10) {
+        $phoneNumber = preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "($1)-$2-$3", $phoneNumber);
+    }        
+    return $phoneNumber;       
 }

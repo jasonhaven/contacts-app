@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
     <div class="card-header">
-        Add Contact
+        Create Contact
     </div>
     <div class="card-body">
         @if ($errors->any())
@@ -40,7 +40,7 @@
 
             <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="text" class="form-control" name="phone" />
+                <input type="tel" class="form-control" name="phone" />
             </div>
 
             <div class="form-group">
