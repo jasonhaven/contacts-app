@@ -51,7 +51,7 @@ class ContactController extends Controller
             'address' => 'max:255',
             'city' => 'max:255',
             'state' => 'max:255',
-            'zip' => 'numeric',
+            'zip' => 'max:255',
             'birthday' => 'date',
             'email' => 'required|max:255',
         ]);
@@ -108,7 +108,7 @@ class ContactController extends Controller
             'address' => 'max:255',
             'city' => 'max:255',
             'state' => 'max:255',
-            'zip' => 'numeric',
+            'zip' => 'max:255',
             'birthday' => 'date',
             'email' => 'required|max:255',
         ]);
