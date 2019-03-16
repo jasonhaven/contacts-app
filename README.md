@@ -13,6 +13,7 @@ Features:
 - [x] Sort contacts
 - [x] Paginate contacts
 - [x] View contact's location with Google Maps and Google's geocoding API
+- [x] Customized map marker
 
 ### Requirements
 
