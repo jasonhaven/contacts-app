@@ -10,6 +10,28 @@
     margin-right: auto;
   }
 
+  .top-inline {
+      display: inline-block;
+  }
+
+  .pull-right {
+      position: absolute;
+      right: 20px;
+      max-width: 170px;
+  }
+
+  @media screen and (max-width: 340px) {
+    .top-inline {
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .pull-right {
+      position: relative;
+    }
+
+  }
+
 </style>
 
 <script>
@@ -28,8 +50,9 @@
 </script>
 
 <div class="contacts-container">
-    <h1>My Contacts</h1>
 
+    <h1 class="top-inline">My Contacts</h1>
+    <a href="{{ route('contacts.create')}}" class="btn btn-primary top-inline pull-right">Create Contact</a>
 
     @if(session()->get('success'))
     <div class="alert alert-success">
