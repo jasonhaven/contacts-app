@@ -30,7 +30,7 @@ cd ./contacts-app
 composer install
 cp .env.example .env
 
-// setup .env file for database configurations (see below)
+// set up .env file for database configurations (see below)
 
 php artisan migrate
 php artisan serve
@@ -68,7 +68,7 @@ DB_PASSWORD=<YOUR_DATABASE_PASSWORD_HERE>
 
 ```
 
-Replace all values to match the configuration on your local setup. For example, if you have a mysql database on your localhost and a database named 'contactapp' you can use the following config. Assuming your mysql user and password is root/root and port is 8889. APP_KEY for this example is base64:/2NO/gm92XP/mq+ec390EBJ05NurJXsaKxtDQ+zgMCc=
+Replace all values to match the configuration on your local setup. For example, if you have a MySQL database on your localhost and a database named 'contactapp' you can use the following config. Assuming your MySQL user and password is root/root and port is 8889. APP_KEY for this example is base64:/2NO/gm92XP/mq+ec390EBJ05NurJXsaKxtDQ+zgMCc=
 
 ```
 
