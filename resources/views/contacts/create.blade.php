@@ -5,10 +5,19 @@
     .uper {
     margin-top: 40px;
   }
+
+  .warning {      
+      float: right;
+  }
+
+  .red-text {
+    color: red;
+  }
+
 </style>
 <div class="card uper">
     <div class="card-header">
-        Create Contact
+        Create Contact <span class="warning red-text">* Required field</span>
     </div>
     <div class="card-body">
         @if ($errors->any())
@@ -24,17 +33,17 @@
 
             <div class="form-group">
                 @csrf
-                <label for="first_name">First Name:</label>
+                <label for="first_name">First Name: <span class="red-text">*</span></label>
                 <input type="text" class="form-control" name="first_name" />
             </div>
 
             <div class="form-group">
-                <label for="last_name">Last Name:</label>
+                <label for="last_name">Last Name: <span class="red-text">*</span></label>
                 <input type="text" class="form-control" name="last_name" />
             </div>
 
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email">Email: <span class="red-text">*</span></label>
                 <input type="text" class="form-control" name="email" />
             </div>
 
