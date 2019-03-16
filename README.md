@@ -1,6 +1,6 @@
 # Contact App - Demo
 
-This is a demo application for managing contacts. 
+This is a demo application for managing contacts
 
 Features:
 
@@ -30,7 +30,7 @@ cd ./contacts-app
 composer install
 cp .env.example .env
 
-// setup .env file for database configurations
+// setup .env file for database configurations (see below)
 
 php artisan migrate
 php artisan serve
@@ -42,6 +42,12 @@ php artisan serve
 The application's migration scripts will take care of the SQL tables for you. As long as your .env file is set up correctly this is all you should have to do to get started.
 
 ### Setting up the .env file
+
+**Please note:** You will have to create a MySQL database for this application. You can use the following SQL code to create the database
+
+```
+CREATE DATABASE contactapp;
+```
 
 You must set the APP_KEY and DB values to start the app successfully  
 
@@ -61,15 +67,12 @@ DB_USERNAME=<YOUR_DATABASE_USERNAME_HERE>
 DB_PASSWORD=<YOUR_DATABASE_PASSWORD_HERE>
 
 ```
+
 Replace all values to match the configuration on your local setup. For example, if you have a mysql database on your localhost and a database named 'contactapp' you can use the following config. Assuming your mysql user and password is root/root and port is 8889. APP_KEY for this example is base64:/2NO/gm92XP/mq+ec390EBJ05NurJXsaKxtDQ+zgMCc=
 
 ```
 
-// Sample APP_KEY
-
 APP_KEY=base64:/2NO/gm92XP/mq+ec390EBJ05NurJXsaKxtDQ+zgMCc=
-
-// Sample DB Values
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
