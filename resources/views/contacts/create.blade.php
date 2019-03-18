@@ -6,7 +6,7 @@
     margin-top: 40px;
   }
 
-  .warning {      
+  .warning {
       float: right;
   }
 
@@ -49,7 +49,7 @@
 
             <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="tel" class="form-control" name="phone" />
+                <input type="tel" class="form-control" name="phone" placeholder="555555555" maxlength="10" />
             </div>
 
             <div class="form-group">
@@ -74,7 +74,7 @@
 
             <div class="form-group">
                 <label for="birthday">Birthday:</label>
-                <input type="text" class="form-control" name="birthday" />
+                <input type="text" class="form-control" name="birthday" placeholder="01/01/1950" />
             </div>
 
             <button type="submit" class="btn btn-primary">Create Contact</button>

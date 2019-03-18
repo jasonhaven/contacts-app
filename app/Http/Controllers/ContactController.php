@@ -38,25 +38,19 @@ class ContactController extends Controller
     public function store(Request $request)
     {
 
-        $new_date = date_create($request['birthday']);
-        $request['birthday'] = $new_date;
-
-        $new_phone = formatPhone($request['phone']);
-        $request['phone'] = $new_phone;
-
         $validatedData = $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'phone' => 'max:255',
+            'email' => 'required|email',
+            'phone' => 'digits:10|nullable',
             'address' => 'max:255',
             'city' => 'max:255',
             'state' => 'max:255',
             'zip' => 'max:255',
-            'birthday' => 'date',
-            'email' => 'required|max:255',
+            'birthday' => 'date_format:"d/m/Y"|nullable',
         ]);
         $contact = Contact::create($validatedData);
-   
+
         return redirect('/contacts')->with('success', 'Contact was saved!');
     }
 
@@ -95,25 +89,20 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $new_date = date_create($request['birthday']);
-        $request['birthday'] = $new_date;
-
-        $new_phone = formatPhone($request['phone']);
-        $request['phone'] = $new_phone;
 
         $validatedData = $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'phone' => 'max:255',
+            'email' => 'required|email',
+            'phone' => 'digits:10|nullable',
             'address' => 'max:255',
             'city' => 'max:255',
             'state' => 'max:255',
             'zip' => 'max:255',
-            'birthday' => 'date',
-            'email' => 'required|max:255',
+            'birthday' => 'date_format:"d/m/Y"|nullable',
         ]);
         Contact::whereId($id)->update($validatedData);
-   
+
         return redirect('/contacts')->with('success', 'Contact was successfully updated!');
     }
 
@@ -129,15 +118,7 @@ class ContactController extends Controller
         $contact->delete();
 
         return redirect('/contacts')->with('success', 'Contact was successfully deleted!');
-    }    
+    }
 
 }
 
-function formatPhone($phoneNumber) 
-{
-    $phoneNumber = preg_replace("/[^\d]/","",$phoneNumber);
-    if(strlen($phoneNumber) == 10) {
-        $phoneNumber = preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "($1)-$2-$3", $phoneNumber);
-    }        
-    return $phoneNumber;       
-}
